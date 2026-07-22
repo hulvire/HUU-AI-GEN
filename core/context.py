@@ -9,6 +9,7 @@ from core.assets import (
     CheckpointManager,
 )
 from core.engine import GenerationEngine
+from core.loras import LoRAManager
 from core.models import (
     ModelAssetResolver,
     ModelManager,
@@ -35,8 +36,9 @@ class ApplicationContext:
     model_manager: ModelManager
     preset_manager: PresetManager
     scheduler_manager: SchedulerManager
-    scheduler_factory: SchedulerFactory
+    lora_manager: LoRAManager
 
+    scheduler_factory: SchedulerFactory
     asset_manager: AssetManager
     checkpoint_manager: CheckpointManager
     pipeline_manager: PipelineManager

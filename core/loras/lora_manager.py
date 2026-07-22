@@ -5,7 +5,9 @@ from typing import Iterator
 from core.loras.lora_definition import (
     LoRADefinition,
 )
-
+from core.loras.lora_runtime import (
+    LoRARuntime,
+)
 
 class LoRAManager:
     """
@@ -273,3 +275,42 @@ class LoRAManager:
                 f"{type(exception).__name__}: "
                 f"{exception}"
             )
+
+
+    def create_runtime(
+        self,
+        lora_id: str,
+        *,
+        scale: float | None = None,
+        enabled: bool = True,
+    ) -> LoRARuntime:
+        """
+        Create runtime configuration for a catalog LoRA.
+        """
+        definition = self.require(lora_id)
+
+        if not definition.enabled:
+            raise ValueError(
+                f"LoRA is disabled: {lora_id}"
+            )
+
+        return LoRARuntime.from_definition(
+            definition=definition,
+            scale=scale,
+            enabled=enabled,
+        )
+
+    def create_runtimes(
+        self,
+        selections: dict[str, float],
+    ) -> tuple[LoRARuntime, ...]:
+        """
+        Create runtime configurations from ID-scale pairs.
+        """
+        return tuple(
+            self.create_runtime(
+                lora_id=lora_id,
+                scale=scale,
+            )
+            for lora_id, scale in selections.items()
+        )

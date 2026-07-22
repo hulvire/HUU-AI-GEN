@@ -14,6 +14,10 @@ from core.bootstrap.pipelines import (
 from core.bootstrap.presets import (
     create_preset_manager,
 )
+from core.bootstrap.loras import (
+    create_lora_manager,
+)
+from core.loras import LoRAManager
 from core.bootstrap.schedulers import (
     create_scheduler_dependencies,
 )
@@ -71,7 +75,7 @@ def bootstrap() -> ApplicationContext:
 
     model_manager.scan()
 
-    preset_manager = create_preset_manager()
+    lora_manager = create_lora_manager()
 
     asset_manager = create_asset_manager()
 
@@ -92,6 +96,10 @@ def bootstrap() -> ApplicationContext:
 
     _print_scheduler_manager_status(
         scheduler_manager
+    )
+
+    _print_lora_manager_status(
+        lora_manager
     )
 
 
@@ -127,6 +135,7 @@ def bootstrap() -> ApplicationContext:
         model_manager=model_manager,
         preset_manager=preset_manager,
         scheduler_manager=scheduler_manager,
+        lora_manager=lora_manager,
         scheduler_factory=scheduler_factory,
         asset_manager=asset_manager,
         checkpoint_manager=checkpoint_manager,
@@ -255,5 +264,29 @@ def _print_preset_manager_status(
     ):
         print(
             "[PresetManager] "
+            f"Error in {file_path}: {error}"
+        )
+
+def _print_lora_manager_status(
+    lora_manager: LoRAManager,
+) -> None:
+    """
+    Print LoRA catalog information and errors.
+    """
+    print(
+        "[LoRAManager] "
+        f"Loaded {lora_manager.count()} LoRAs, "
+        f"{lora_manager.count(enabled_only=True)} "
+        "enabled."
+    )
+
+    if not lora_manager.has_errors():
+        return
+
+    for file_path, error in (
+        lora_manager.get_errors().items()
+    ):
+        print(
+            "[LoRAManager] "
             f"Error in {file_path}: {error}"
         )

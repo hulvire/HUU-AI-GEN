@@ -4,9 +4,13 @@ from core.loras.lora_definition import (
 from core.loras.lora_manager import (
     LoRAManager,
 )
+from core.loras.lora_runtime import (
+    LoRARuntime,
+)
 
 
 __all__ = [
     "LoRADefinition",
     "LoRAManager",
+    "LoRARuntime",
 ]
