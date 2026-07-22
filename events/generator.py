@@ -43,7 +43,7 @@ def register_generator_events(
         ],
     )
 
-    sidebar["generate"].click(
+    generation_event = sidebar["generate"].click(
         fn=generator_service.generate_image,
         inputs=[
             sidebar["preset"],
@@ -63,4 +63,13 @@ def register_generator_events(
             preview["image"],
             preview["status"],
         ],
+    )
+    
+    generation_event.then(
+        fn=None,
+        js="""
+        () => {
+            window.huuPreviewProgress?.stop();
+        }
+        """,
     )
