@@ -34,12 +34,23 @@ class GeneratorService:
         seed: int | float | None,
         steps: int | float,
         guidance_scale: int | float,
+        lora_id: str | None,
+        lora_scale: int | float,
     ) -> tuple[Image.Image | None, str]:
         """
         Convert UI values into a generation request
         and execute it.
         """
         try:
+
+            lora_selections = (
+                {
+                    lora_id: float(lora_scale),
+                }
+                if lora_id
+                else None
+            )
+
             request = self._request_factory.create(
                 preset_id=preset_id,
                 scheduler_id=scheduler_id,
@@ -53,6 +64,7 @@ class GeneratorService:
                 seed=seed,
                 steps=steps,
                 guidance_scale=guidance_scale,
+                lora_selections=lora_selections,
             )
 
             result = self._engine.generate(

@@ -58,10 +58,11 @@ def register_generator_events(
             sidebar["seed"],
             sidebar["steps"],
             sidebar["guidance_scale"],
+            sidebar["lora"],
+            sidebar["lora_scale"],
         ],
         outputs=[
             preview["image"],
             preview["status"],
         ],
     )
-    

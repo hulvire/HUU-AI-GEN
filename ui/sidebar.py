@@ -235,6 +235,23 @@ def create_sidebar(
                 step=0.5,
             )
 
+            lora = gr.Dropdown(
+                label="LoRA",
+                choices=[
+                    ("None", ""),
+                    ("LCM LoRA SDXL", "lcm-lora-sdxl"),
+                ],
+                value="",
+            )
+
+            lora_scale = gr.Slider(
+                label="LoRA Scale",
+                minimum=0.0,
+                maximum=1.5,
+                value=1.0,
+                step=0.05,
+            )
+
         # ---------------------------------------------
         # Primary action
         # ---------------------------------------------
@@ -258,5 +275,7 @@ def create_sidebar(
         "seed": seed,
         "steps": steps,
         "guidance_scale": guidance_scale,
+        "lora": lora,
+        "lora_scale": lora_scale,
         "generate": generate,
     }
