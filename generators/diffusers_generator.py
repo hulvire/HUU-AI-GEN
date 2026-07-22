@@ -13,7 +13,7 @@ from core.dto import (
 from core.models import ResolvedModelSource
 from core.pipelines import PipelineManager
 from generators.base import BaseGenerator
-
+from services.lora_loader import LoRALoader
 
 class DiffusersGenerator(BaseGenerator):
     """
@@ -26,6 +26,7 @@ class DiffusersGenerator(BaseGenerator):
         model: dict[str, Any],
         model_source: ResolvedModelSource | None,
         pipeline_manager: PipelineManager,
+        lora_loader: LoRALoader,
     ) -> None:
         if model_source is None:
             raise ValueError(
@@ -36,6 +37,7 @@ class DiffusersGenerator(BaseGenerator):
         self.model = model
         self._model_source = model_source
         self._pipeline_manager = pipeline_manager
+        self._lora_loader = lora_loader
 
     def generate(
         self,
@@ -75,6 +77,10 @@ class DiffusersGenerator(BaseGenerator):
                 "the requested scheduler."
             )
         
+        self._lora_loader.apply(
+            pipeline=pipeline,
+            selection=request.loras,
+        )
 
         used_seed = (
             int(request.seed)
