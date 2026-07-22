@@ -1,6 +1,6 @@
 {
     "name": "HUU-AI-GEN",
-    "version": "0.6.1",
+    "version": "0.6.5",
     "release_date": "2026-07-20",
     "description": "Local modular AI image generation platform.",
     "environment": "development",

@@ -15,6 +15,9 @@ from core.pipelines import PipelineManager
 from generators.base import BaseGenerator
 from services.lora_loader import LoRALoader
 
+
+
+
 class DiffusersGenerator(BaseGenerator):
     """
     Generates images using a pipeline managed

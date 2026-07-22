@@ -17,6 +17,9 @@ from core.bootstrap.presets import (
 from core.bootstrap.loras import (
     create_lora_manager,
 )
+from core.bootstrap.loras_runtime import (
+    create_lora_loader,
+)
 from core.loras import LoRAManager
 from core.bootstrap.schedulers import (
     create_scheduler_dependencies,
@@ -59,6 +62,9 @@ def bootstrap() -> ApplicationContext:
         scheduler_manager=scheduler_manager,
         scheduler_factory=scheduler_factory,
     )
+
+    lora_loader = create_lora_loader()
+
     _validate_preset_schedulers(
         preset_manager=preset_manager,
         scheduler_manager=scheduler_manager,
@@ -67,6 +73,7 @@ def bootstrap() -> ApplicationContext:
     register_generator_backends(
         registry=registry,
         pipeline_manager=pipeline_manager,
+        lora_loader=lora_loader,
     )
 
     model_manager = ModelManager(
