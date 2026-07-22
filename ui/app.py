@@ -31,7 +31,8 @@ def create_app(
 
 **Version:** {application.get_display_version()}  
 **Release date:** {application.release_date}
-"""
+""",
+    elem_classes=["app-header"],
         )
 
         with gr.Row():
