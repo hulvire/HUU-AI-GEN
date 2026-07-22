@@ -2,6 +2,8 @@
 
 Modern AI Image Generator built with Gradio.
 
+HUU-AI-GEN is a modular local AI image generation framework focused on clean architecture, readability, extensibility and educational value.
+
 ## Features
 
 - Modular architecture
