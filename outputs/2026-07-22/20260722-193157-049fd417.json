@@ -1,0 +1,42 @@
+{
+    "application": {
+        "name": "HUU-AI-GEN",
+        "version": "0.6.1",
+        "environment": "development"
+    },
+    "prompt": "detailed fantasy character, cinematic composition, dramatic lighting, intricate clothing, highly detailed, sharp focus",
+    "negative_prompt": "low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face, low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face",
+    "seed": 511752362,
+    "model": {
+        "id": "pillow-demo",
+        "name": "Pillow Diagnostic Generator",
+        "repository_id": null,
+        "backend": "pillow"
+    },
+    "generation": {
+        "mode": "text-to-image",
+        "preset": {
+            "id": "fantasy-character",
+            "name": "Fantasy Character"
+        },
+        "scheduler": {
+            "id": "euler-ancestral",
+            "name": "Euler Ancestral"
+        },
+        "width": 512,
+        "height": 512,
+        "steps": 57,
+        "guidance_scale": 6.5,
+        "duration_seconds": 0.022
+    },
+    "input": {
+        "used": false,
+        "image": null,
+        "strength": null
+    },
+    "output": {
+        "created_at": "2026-07-22T19:31:57",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-193157-049fd417.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-193157-049fd417.json"
+    }
+}

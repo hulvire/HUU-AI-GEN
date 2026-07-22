@@ -25,3 +25,12 @@ def register_events(
         sidebar=sidebar,
         preset_manager=preset_manager,
     )
+
+    generation_event.then(
+        fn=None,
+        js="""
+        () => {
+            window.huuPreviewProgress?.stop();
+        }
+        """,
+    )

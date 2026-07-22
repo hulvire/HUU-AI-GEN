@@ -362,6 +362,69 @@
     line-height: 1.55;
 }
 
+/* ========================================
+   Preview generation progress
+======================================== */
+
+#preview {
+    position: relative;
+    overflow: hidden;
+}
+
+#preview::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 20;
+
+    width: 34%;
+    height: 2px;
+
+    opacity: 0;
+    pointer-events: none;
+
+    border-radius: var(--huu-radius-pill);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--huu-primary-500),
+            transparent
+        );
+
+    transform: translateX(-120%);
+}
+
+#preview.is-generating::after {
+    opacity: 0.65;
+
+    animation:
+        huu-preview-progress
+        1.4s
+        ease-in-out
+        infinite;
+}
+
+@keyframes huu-preview-progress {
+    from {
+        transform: translateX(-120%);
+    }
+
+    to {
+        transform: translateX(390%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #preview.is-generating::after {
+        animation: none;
+        transform: translateX(95%);
+    }
+}
 
 /* ========================================
    Responsive components
