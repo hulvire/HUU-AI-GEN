@@ -1,0 +1,23 @@
+{
+    "prompt": "RAW photo, Canon EOS R5, professional photography , eye-level shot, straight-on perspective, balanced composition, natural symmetry, 50mm lens , masterpiece, best quality, mastercraft quality, perfect detail, professional grade, 8k uhd , warm fireplace glow , (modelshoot style:1.3), masterpiece, hires, highest quality, (extremely detailed wallpaper), full shot body photo of the most beautiful artwork in the world, (ultra detailed medieval armor:1.3), majestic oil painting by Ed Blinkey, Atey Ghailan, Studio Ghibli, by Jeremy Mann, Greg Manchess, Antonio Moro, trending on ArtStation, trending on CGSociety, Intricate, High Detail, Sharp focus, dramatic, photorealistic painting art by midjourney and greg rutkowski, female knight bastard_face_001_1 (beautiful face, detailed eyeliner:1.2), skin pores, lightly moist skin, detailed skin textures, minor blemishes, imperfect, curtains,  porn lighting,(demon horns:1) (bastard_body_001_1:0.9),\n\nhires, highest quality,  saggy breasts with large areolas and hard nipples, feet with red nails, detailed sexy feet, detailed skin, detailed eyes, caresses her breasts, , cinematic shot, dynamic lighting, 75mm, Technicolor, Panavision, cinemascope, sharp focus, fine details, 8k, HDR, realism, realistic, key visual, film still, cinematic color grading, depth of field.\n\nOverall, it's an absolute world-class cinematic masterpiece. It's an aesthetically pleasing cinematic shot with impeccable attention to detail and impressive composition.",
+    "negative_prompt": "horror face, deformed feet,",
+    "seed": 646582525,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 15.0,
+        "duration_seconds": 37.12
+    },
+    "output": {
+        "created_at": "2026-07-19T09:53:30",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-095330-b6cc12a7.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-095330-b6cc12a7.json"
+    }
+}

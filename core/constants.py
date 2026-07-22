@@ -1,0 +1,5 @@
+APP_NAME = "HUU-AI-GEN"
+
+DEFAULT_THEME = "soft"
+
+DEFAULT_LANGUAGE = "en"

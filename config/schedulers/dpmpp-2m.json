@@ -1,0 +1,12 @@
+{
+    "id": "dpmpp-2m",
+    "name": "DPM++ 2M",
+    "class_name": "DPMSolverMultistepScheduler",
+    "enabled": true,
+    "default": false,
+    "description": "High-quality multistep DPM solver.",
+    "configuration": {
+        "algorithm_type": "dpmsolver++",
+        "solver_order": 2
+    }
+}

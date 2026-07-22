@@ -1,0 +1,23 @@
+{
+    "prompt": "golden horse with glass sadle",
+    "negative_prompt": "people",
+    "seed": 1530109567,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 15.0,
+        "duration_seconds": 36.44
+    },
+    "output": {
+        "created_at": "2026-07-20T18:28:53",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-182853-7dc16a72.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-182853-7dc16a72.json"
+    }
+}

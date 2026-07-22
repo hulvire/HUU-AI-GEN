@@ -1,0 +1,23 @@
+{
+    "prompt": "iii",
+    "negative_prompt": "",
+    "seed": 887707038,
+    "model": {
+        "id": "pillow-demo",
+        "name": "Pillow Diagnostic Generator",
+        "repository": null,
+        "backend": "pillow"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 7.5,
+        "duration_seconds": 0.003
+    },
+    "output": {
+        "created_at": "2026-07-20T18:36:59",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-183659-a82b9a96.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-183659-a82b9a96.json"
+    }
+}

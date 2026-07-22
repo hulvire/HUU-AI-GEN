@@ -1,0 +1,14 @@
+{
+    "id": "default",
+    "name": "Default",
+    "description": "Neutral generation settings without additional styling.",
+    "enabled": true,
+    "default": true,
+    "prompt_prefix": "",
+    "prompt_suffix": "",
+    "negative_prompt": "",
+    "scheduler": "euler",
+    "steps": 20,
+    "guidance_scale": 7.0,
+    "strength": 0.4
+}

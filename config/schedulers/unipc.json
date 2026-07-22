@@ -1,0 +1,9 @@
+{
+    "id": "unipc",
+    "name": "UniPC",
+    "class_name": "UniPCMultistepScheduler",
+    "enabled": true,
+    "default": false,
+    "description": "Fast and stable predictor-corrector scheduler.",
+    "configuration": {}
+}

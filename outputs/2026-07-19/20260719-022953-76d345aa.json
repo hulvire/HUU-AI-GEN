@@ -1,0 +1,23 @@
+{
+    "prompt": "barefoot secretary on four wear pink rock and pink top,  play tenis on beach,\n\nsee whole scene, \nside wiev,\ndetailed skin texture, \nultrarealistic,",
+    "negative_prompt": "",
+    "seed": 124563,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 33,
+        "guidance_scale": 4.5,
+        "duration_seconds": 60.64
+    },
+    "output": {
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-022953-76d345aa.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-022953-76d345aa.json",
+        "created_at": "2026-07-19T02:29:53"
+    }
+}

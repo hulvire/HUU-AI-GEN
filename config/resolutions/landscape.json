@@ -1,0 +1,8 @@
+{
+    "id": "landscape",
+    "name": "Landscape",
+    "width": 1536,
+    "height": 1024,
+    "enabled": false,
+    "default": false
+}

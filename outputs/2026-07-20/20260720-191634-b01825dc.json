@@ -1,0 +1,28 @@
+{
+    "application": {
+        "name": "HUU-AI-GEN",
+        "version": "0.3.0",
+        "environment": "development"
+    },
+    "prompt": "warm fireplace glow ,masterpiece, hires, highest quality, full shot body photo of the most beautiful artwork in the world, (ultra detailed medieval armor:1.3), Intricate, High Detail, Sharp focus, dramatic, 44year female knight, skin pores, lightly moist skin, detailed skin textures,  feet with red nails, detailed sexy feet,",
+    "negative_prompt": "",
+    "seed": 1399145240,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 7.5,
+        "duration_seconds": 36.67
+    },
+    "output": {
+        "created_at": "2026-07-20T19:16:34",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-191634-b01825dc.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-191634-b01825dc.json"
+    }
+}

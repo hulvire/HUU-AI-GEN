@@ -1,0 +1,23 @@
+{
+    "prompt": "barefoot secretary on four wear pink rock and pink top, \ntwo men wear colorful shirts, \nfirst man fuck her from behind sticking his enormous fat dick deeply into her vagina, \nother man in front of her inserting his big dick into her mout, \nsensitive intimate energy, \nsee whole scene, \nall bodies wisible, \nside wiev,\nin extremly empty dark big storrage on magical oriental camasutra rug,",
+    "negative_prompt": "",
+    "seed": 801517200,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 15.0,
+        "duration_seconds": 36.83
+    },
+    "output": {
+        "created_at": "2026-07-19T02:59:18",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-025917-d2436de8.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-025917-d2436de8.json"
+    }
+}

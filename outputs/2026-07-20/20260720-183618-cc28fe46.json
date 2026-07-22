@@ -1,0 +1,23 @@
+{
+    "prompt": "Testing multiple HUU-AI-GEN generator backends all red",
+    "negative_prompt": "",
+    "seed": 12345,
+    "model": {
+        "id": "pillow-demo",
+        "name": "Pillow Diagnostic Generator",
+        "repository": null,
+        "backend": "pillow"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 7.5,
+        "duration_seconds": 0.005
+    },
+    "output": {
+        "created_at": "2026-07-20T18:36:18",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-183618-cc28fe46.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-20\\20260720-183618-cc28fe46.json"
+    }
+}

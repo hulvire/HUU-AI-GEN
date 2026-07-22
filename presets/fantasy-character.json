@@ -1,0 +1,14 @@
+{
+    "id": "fantasy-character",
+    "name": "Fantasy Character",
+    "description": "Detailed fantasy character artwork with cinematic lighting.",
+    "enabled": true,
+    "default": false,
+    "prompt_prefix": "detailed fantasy character, cinematic composition, dramatic lighting, intricate clothing",
+    "prompt_suffix": "highly detailed, sharp focus",
+    "negative_prompt": "low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face",
+    "scheduler": "dpmpp-2m",
+    "steps": 28,
+    "guidance_scale": 6.5,
+    "strength": 0.4
+}

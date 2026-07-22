@@ -1,0 +1,8 @@
+{
+    "id": "square",
+    "name": "Square HD",
+    "width": 1024,
+    "height": 1024,
+    "enabled": false,
+    "default": false
+}

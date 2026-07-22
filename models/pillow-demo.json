@@ -1,0 +1,12 @@
+{
+    "id": "pillow-demo",
+    "name": "Pillow Diagnostic Generator",
+    "description": "Lightweight diagnostic backend for testing generator switching.",
+    "backend": "pillow",
+    "repository": null,
+    "enabled": true,
+    "settings": {
+        "steps": 1,
+        "guidance_scale": 0.0
+    }
+}

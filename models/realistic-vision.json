@@ -1,0 +1,9 @@
+{
+    "id": "realistic-vision",
+    "name": "Realistic Vision",
+    "backend": "diffusers",
+    "model_path": "",
+    "enabled": false,
+    "default": false,
+    "description": "Photorealistic Stable Diffusion model."
+}

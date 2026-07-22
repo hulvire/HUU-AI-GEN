@@ -1,0 +1,23 @@
+{
+    "prompt": "boudoir photography, \nwery pretty 21year old stepmom extreme long pony brunette hair,\nsilk sexy lingerie,\n spread legs,\n perfect thin pussy, \nperfect feet with red nails, \ndetailed feet,  \nsole feet, \nshow natural big saggy breasts with large areolas and hard nipples,\nlying in bed with stripped pink silk sheets,\nplush gold pillows, \nrustical loft settings, neklace on her ankle,\nart easel with extreme big canvas with full body show garden gnome with enormous big dick on it,  \ndetailed pussy, \ndetailed breasts, hevyly sweated,\ndetailed skin texture, \nultrarealistic,, in soft gaze, looking straight at the camera, skin blemishes, imperfect skin, skin pores, no makeup, no cosmetics, matured, solo, centered, RAW photo, detailed, clear features, sharp focus, film grain, 8k uhd, candid portrait, natural lighting",
+    "negative_prompt": "",
+    "seed": 294543793,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 7.5,
+        "duration_seconds": 37.54
+    },
+    "output": {
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-020002-fd62abf5.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-020002-fd62abf5.json",
+        "created_at": "2026-07-19T02:00:02"
+    }
+}

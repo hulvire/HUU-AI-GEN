@@ -1,0 +1,34 @@
+{
+    "application": {
+        "name": "HUU-AI-GEN",
+        "version": "0.6.0",
+        "environment": "development"
+    },
+    "prompt": "cat with catched fish",
+    "negative_prompt": "low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face",
+    "seed": 1543491746,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "mode": "text-to-image",
+        "width": 512,
+        "height": 512,
+        "steps": 28,
+        "guidance_scale": 6.5,
+        "duration_seconds": 47.73
+    },
+    "input": {
+        "used": false,
+        "image": null,
+        "strength": null
+    },
+    "output": {
+        "created_at": "2026-07-22T08:58:26",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-085826-148d5557.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-085826-148d5557.json"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "id": "euler-ancestral",
+    "name": "Euler Ancestral",
+    "class_name": "EulerAncestralDiscreteScheduler",
+    "enabled": true,
+    "default": false,
+    "description": "Creative ancestral Euler scheduler.",
+    "configuration": {}
+}

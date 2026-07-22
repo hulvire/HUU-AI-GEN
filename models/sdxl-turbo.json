@@ -1,0 +1,13 @@
+{
+    "id": "sdxl-turbo",
+    "name": "SDXL Turbo",
+    "backend": "diffusers",
+    "repository": "stabilityai/sdxl-turbo",
+    "enabled": false,
+    "default": false,
+    "settings": {
+        "steps": 2,
+        "guidance_scale": 0.0
+    },
+    "description": "Fast SDXL text-to-image model."
+}

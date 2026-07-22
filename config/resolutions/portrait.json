@@ -1,0 +1,8 @@
+{
+    "id": "portrait",
+    "name": "Portrait",
+    "width": 1024,
+    "height": 1536,
+    "enabled": false,
+    "default": true
+}

@@ -1,0 +1,28 @@
+{
+    "application": {
+        "name": "HUU-AI-GEN",
+        "version": "0.5.0",
+        "environment": "development"
+    },
+    "prompt": "seamless pattern rough concrete",
+    "negative_prompt": "",
+    "seed": 138156852,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 7.5,
+        "duration_seconds": 34.91
+    },
+    "output": {
+        "created_at": "2026-07-21T12:01:34",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-21\\20260721-120134-6cd8b7eb.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-21\\20260721-120134-6cd8b7eb.json"
+    }
+}

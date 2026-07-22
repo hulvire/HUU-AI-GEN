@@ -1,0 +1,23 @@
+{
+    "prompt": "professional quality, high detail, industry standard, excellent quality,anamorphic lens, cinematic lighting,dramatic lighting,(1hot sexy 45year old woman brunette  milf witch extremly sweated  white skin half naked undresing dirty ancient dress opened vet thin shaved vagina big wery saggy tits small nice ass  tiny asshole sexy feet red nails on feet), deep pussy penetration, \nfront look,\nthe witch lying on back squat spreads her legs wide hold dildo, huge extremly big fat transparent glass dildo sticked deeply into her vet vagina, next to dildo standind little man big as dildo and masturbate and kiss the dildo, she  smile and moan in delight extasy, horny red in her face,  \n\narround oriental pilows and on floor on wall one big painting showing her portrait  of age 30 she hold in arms her big bare saggy breasts, she look on to you with blushing eyes and winks, \n\nnight in dark wood cottage on fur rug, only light from 2 candles on floor, extreme asshole closeup, low-angle shot, decent breathtaking erotic athmosfere,\n, cinematic shot, dynamic lighting, 75mm, Technicolor, Panavision, cinemascope, sharp focus, fine details, 8k, HDR, realism, realistic, key visual, film still, cinematic color grading, depth of field.\n\nOverall, it's an absolute world-class cinematic masterpiece. It's an aesthetically pleasing cinematic shot with impeccable attention to detail and impressive composition.",
+    "negative_prompt": "",
+    "seed": 76544423,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 7.5,
+        "duration_seconds": 36.18
+    },
+    "output": {
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-015505-9a43a217.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-015505-9a43a217.json",
+        "created_at": "2026-07-19T01:55:06"
+    }
+}

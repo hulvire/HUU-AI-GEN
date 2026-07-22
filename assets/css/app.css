@@ -1,0 +1,51 @@
+.gradio-container{
+    max-width:1700px !important;
+    margin:0 auto;
+    background: #f3f4f6;
+}
+
+footer{
+    display:none !important;
+}
+
+#generator-sidebar {
+    min-width: 360px;
+}
+
+#generate-button {
+    min-height: 48px;
+    font-weight: 600;
+}
+
+button {
+    border-radius: 12px;
+}
+
+footer {
+    display: none;
+}
+
+
+.gradio-container.gradio-container-6-20-0 .contain h1{
+    margin-bottom: 0px !important;
+    width: 50%;
+    position: relative;
+}
+
+.gradio-container-6-20-0 .prose span { 
+    display: flex; 
+    justify-content: space-between; 
+    flex-direction: column;
+}
+.gradio-container-6-20-0 .prose span > p:first-of-type { 
+    font-size:12px;
+    margin: 0 5px 20px;
+} 
+.gradio-container-6-20-0 .prose span > p:last-child { 
+    font-size: 9px;
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    display: flex;
+    gap: 5px;
+}

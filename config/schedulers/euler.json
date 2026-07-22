@@ -1,0 +1,9 @@
+{
+    "id": "euler",
+    "name": "Euler",
+    "class_name": "EulerDiscreteScheduler",
+    "enabled": true,
+    "default": true,
+    "description": "Stable general-purpose scheduler.",
+    "configuration": {}
+}

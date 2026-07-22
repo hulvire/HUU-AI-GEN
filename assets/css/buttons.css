@@ -1,0 +1,13 @@
+.generate-btn{
+
+    height:65px;
+
+    font-size:22px !important;
+
+    font-weight:bold;
+
+    background-color: teal;
+
+}
+
+label > span { padding: 25px 10px }

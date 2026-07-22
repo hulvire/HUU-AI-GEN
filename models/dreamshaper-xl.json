@@ -1,0 +1,9 @@
+{
+    "id": "dreamshaper-xl",
+    "name": "DreamShaper XL",
+    "backend": "diffusers",
+    "model_path": "",
+    "enabled": false,
+    "default": false,
+    "description": "General-purpose creative SDXL model."
+}

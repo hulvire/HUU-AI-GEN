@@ -1,0 +1,9 @@
+{
+    "id": "juggernaut-xl",
+    "name": "Juggernaut XL",
+    "backend": "diffusers",
+    "model_path": "",
+    "enabled": false,
+    "default": false,
+    "description": "Photorealistic SDXL model."
+}

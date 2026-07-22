@@ -1,0 +1,23 @@
+{
+    "prompt": "big lake with pink ducks",
+    "negative_prompt": "blurry, deformed bodies,",
+    "seed": 1672428420,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 15.0,
+        "duration_seconds": 36.29
+    },
+    "output": {
+        "created_at": "2026-07-19T02:48:03",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-024803-af383e30.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-19\\20260719-024803-af383e30.json"
+    }
+}

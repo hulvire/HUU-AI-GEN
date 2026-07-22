@@ -1,0 +1,8 @@
+{
+    "id": "square-512",
+    "name": "Square",
+    "width": 512,
+    "height": 512,
+    "enabled": true,
+    "default": true
+}

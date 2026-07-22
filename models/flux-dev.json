@@ -1,0 +1,9 @@
+{
+    "id": "flux-dev",
+    "name": "FLUX.1 Dev",
+    "backend": "diffusers",
+    "model_path": "",
+    "enabled": false,
+    "default": false,
+    "description": "High-quality FLUX development model."
+}

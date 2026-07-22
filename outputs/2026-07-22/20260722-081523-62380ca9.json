@@ -1,0 +1,34 @@
+{
+    "application": {
+        "name": "HUU-AI-GEN",
+        "version": "0.6.0",
+        "environment": "development"
+    },
+    "prompt": "cat with catched fish",
+    "negative_prompt": "",
+    "seed": 1747153750,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "mode": "text-to-image",
+        "width": 512,
+        "height": 512,
+        "steps": 20,
+        "guidance_scale": 12.0,
+        "duration_seconds": 35.53
+    },
+    "input": {
+        "used": false,
+        "image": null,
+        "strength": null
+    },
+    "output": {
+        "created_at": "2026-07-22T08:15:23",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-081523-62380ca9.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-081523-62380ca9.json"
+    }
+}

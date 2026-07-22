@@ -1,0 +1,42 @@
+{
+    "application": {
+        "name": "HUU-AI-GEN",
+        "version": "0.6.1",
+        "environment": "development"
+    },
+    "prompt": "detailed fantasy character, cinematic composition, dramatic lighting, intricate clothing, cat hawe catched fish in mouth, highly detailed, sharp focus",
+    "negative_prompt": "low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face, low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face",
+    "seed": 1502091054,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "mode": "image-to-image",
+        "preset": {
+            "id": "fantasy-character",
+            "name": "Fantasy Character"
+        },
+        "scheduler": {
+            "id": "euler",
+            "name": "Euler"
+        },
+        "width": 512,
+        "height": 512,
+        "steps": 28,
+        "guidance_scale": 6.5,
+        "duration_seconds": 21.29
+    },
+    "input": {
+        "used": true,
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-130518-b5db12d1-input.png",
+        "strength": 0.4
+    },
+    "output": {
+        "created_at": "2026-07-22T13:05:26",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-130518-b5db12d1.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-130518-b5db12d1.json"
+    }
+}

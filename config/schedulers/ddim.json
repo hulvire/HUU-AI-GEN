@@ -1,0 +1,9 @@
+{
+    "id": "ddim",
+    "name": "DDIM",
+    "class_name": "DDIMScheduler",
+    "enabled": true,
+    "default": false,
+    "description": "Deterministic diffusion implicit scheduler.",
+    "configuration": {}
+}
