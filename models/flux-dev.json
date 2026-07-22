@@ -1,9 +1,12 @@
 {
-    "id": "flux-dev",
-    "name": "FLUX.1 Dev",
-    "backend": "diffusers",
-    "model_path": "",
-    "enabled": true,
-    "default": false,
-    "description": "High-quality FLUX development model."
+  "id": "flux-dev",
+  "name": "FLUX.1 Dev",
+  "backend": "diffusers",
+  "family": "flux",
+  "enabled": false,
+  "default": false,
+  "model_path": null,
+  "repository_id": "black-forest-labs/FLUX.1-dev",
+  "checkpoint_asset_id": null,
+  "description": "High-quality FLUX development model. Currently unsupported by the runtime."
 }

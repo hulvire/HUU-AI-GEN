@@ -1,9 +1,12 @@
 {
-    "id": "realistic-vision",
-    "name": "Realistic Vision",
-    "backend": "diffusers",
-    "model_path": "",
-    "enabled": true,
-    "default": false,
-    "description": "Photorealistic Stable Diffusion model."
+  "id": "realistic-vision",
+  "name": "Realistic Vision",
+  "backend": "diffusers",
+  "family": "sd15",
+  "enabled": false,
+  "default": false,
+  "model_path": null,
+  "repository_id": null,
+  "checkpoint_asset_id": null,
+  "description": "Photorealistic Stable Diffusion 1.5 model."
 }

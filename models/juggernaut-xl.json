@@ -1,9 +1,12 @@
 {
-    "id": "juggernaut-xl",
-    "name": "Juggernaut XL",
-    "backend": "diffusers",
-    "model_path": "",
-    "enabled": true,
-    "default": false,
-    "description": "Photorealistic SDXL model."
+  "id": "juggernaut-xl",
+  "name": "Juggernaut XL",
+  "backend": "diffusers",
+  "family": "sdxl",
+  "enabled": true,
+  "default": false,
+  "model_path": null,
+  "repository_id": "RunDiffusion/Juggernaut-XL-v9",
+  "checkpoint_asset_id": null,
+  "description": "Photorealistic SDXL model."
 }
