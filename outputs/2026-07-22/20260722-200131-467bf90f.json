@@ -1,0 +1,42 @@
+{
+    "application": {
+        "name": "HUU-AI-GEN",
+        "version": "0.6.1",
+        "environment": "development"
+    },
+    "prompt": "detailed fantasy character, cinematic composition, dramatic lighting, intricate clothing, cat with catched fis in mouth, highly detailed, sharp focus",
+    "negative_prompt": "low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face, low quality, blurry, deformed, distorted anatomy, extra fingers, missing fingers, malformed hands, duplicated limbs, bad face",
+    "seed": 1290579466,
+    "model": {
+        "id": "stable-diffusion-15",
+        "name": "Stable Diffusion 1.5",
+        "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+        "backend": "diffusers"
+    },
+    "generation": {
+        "mode": "text-to-image",
+        "preset": {
+            "id": "fantasy-character",
+            "name": "Fantasy Character"
+        },
+        "scheduler": {
+            "id": "dpmpp-2m",
+            "name": "DPM++ 2M"
+        },
+        "width": 512,
+        "height": 512,
+        "steps": 28,
+        "guidance_scale": 6.5,
+        "duration_seconds": 46.14
+    },
+    "input": {
+        "used": false,
+        "image": null,
+        "strength": null
+    },
+    "output": {
+        "created_at": "2026-07-22T20:01:31",
+        "image": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-200131-467bf90f.png",
+        "metadata": "C:\\Users\\marti\\HUU-AI-GEN\\outputs\\2026-07-22\\20260722-200131-467bf90f.json"
+    }
+}

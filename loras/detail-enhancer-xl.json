@@ -1,0 +1,22 @@
+{
+  "id": "detail-enhancer-xl",
+  "name": "Detail Enhancer XL",
+  "enabled": true,
+  "default": false,
+  "repository_id": null,
+  "weight_name": null,
+  "file_path": null,
+  "default_scale": 0.75,
+  "min_scale": 0.0,
+  "max_scale": 1.5,
+  "compatible_backends": [
+    "diffusers"
+  ],
+  "compatible_models": [
+    "dreamshaper-xl",
+    "juggernaut-xl",
+    "sdxl-turbo"
+  ],
+  "trigger_words": [],
+  "description": "Example SDXL detail enhancement LoRA configuration."
+}

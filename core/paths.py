@@ -18,6 +18,8 @@ SCHEDULER_CONFIGS = CONFIG / "schedulers"
 
 MODEL_ASSETS = ASSETS / "models"
 
+LORAS = ROOT / "loras"
+
 CHECKPOINTS = MODEL_ASSETS / "checkpoints"
 LORAS = MODEL_ASSETS / "loras"
 VAE = MODEL_ASSETS / "vae"
