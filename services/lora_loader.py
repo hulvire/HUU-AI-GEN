@@ -43,10 +43,14 @@ class LoRALoader:
             )
 
         pipeline.set_adapters(
-            list(selection.adapter_names()),
-            adapter_weights=list(
-                selection.scales()
-            ),
+            [
+                runtime.adapter_name
+                for runtime in active_runtimes
+            ],
+            adapter_weights=[
+                runtime.scale
+                for runtime in active_runtimes
+            ],
         )
 
     def clear(
