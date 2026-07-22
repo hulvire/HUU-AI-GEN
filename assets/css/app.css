@@ -6,12 +6,3 @@
  * system files.
  */
 
-
-#generator-sidebar {
-    overflow: visible !important;
-}
-
-#generator-sidebar .huu-panel,
-#generator-sidebar .settings-section {
-    overflow: visible !important;
-}
