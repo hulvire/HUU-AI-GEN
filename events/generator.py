@@ -65,11 +65,3 @@ def register_generator_events(
         ],
     )
     
-    generation_event.then(
-        fn=None,
-        js="""
-        () => {
-            window.huuPreviewProgress?.stop();
-        }
-        """,
-    )
