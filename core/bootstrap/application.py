@@ -114,6 +114,7 @@ def bootstrap() -> ApplicationContext:
     request_factory = GenerationRequestFactory(
         preset_manager=preset_manager,
         scheduler_manager=scheduler_manager,
+        lora_manager=lora_manager,
     )
 
     generator_service = GeneratorService(

@@ -8,6 +8,9 @@ from core.loras.lora_definition import (
 from core.loras.lora_runtime import (
     LoRARuntime,
 )
+from core.loras.lora_selection import (
+    LoRASelection,
+)
 
 class LoRAManager:
     """
@@ -313,4 +316,28 @@ class LoRAManager:
                 scale=scale,
             )
             for lora_id, scale in selections.items()
+        )
+
+
+    def create_selection(
+        self,
+        selections: dict[str, float]
+        | None = None,
+    ) -> LoRASelection:
+        """
+        Create a validated LoRA selection from ID-scale pairs.
+        """
+        if not selections:
+            return LoRASelection.empty()
+
+        runtimes = tuple(
+            self.create_runtime(
+                lora_id=lora_id,
+                scale=scale,
+            )
+            for lora_id, scale in selections.items()
+        )
+
+        return LoRASelection.from_runtimes(
+            runtimes
         )

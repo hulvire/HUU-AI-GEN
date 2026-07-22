@@ -6,6 +6,7 @@ from core.dto import (
 )
 from core.presets import PresetManager
 from core.schedulers import SchedulerManager
+from core.loras import LoRAManager
 
 class GenerationRequestFactory:
     """
@@ -16,9 +17,11 @@ class GenerationRequestFactory:
         self,
         preset_manager: PresetManager,
         scheduler_manager: SchedulerManager,
+        lora_manager: LoRAManager,
     ) -> None:
         self._preset_manager = preset_manager
         self._scheduler_manager = scheduler_manager
+        self._lora_manager = lora_manager
 
     def create(
         self,
@@ -34,6 +37,7 @@ class GenerationRequestFactory:
         seed: int | float | None,
         steps: int | float,
         guidance_scale: int | float,
+        lora_selections: dict[str, float] | None = None,
     ) -> GenerationRequest:
         """
         Create a generation request and apply
@@ -60,6 +64,12 @@ class GenerationRequestFactory:
             resolved_scheduler_id
         )
 
+        lora_selection = (
+            self._lora_manager.create_selection(
+                lora_selections
+            )
+        )
+
         request = GenerationRequest(
             preset_id=preset.id,
             preset_name=preset.name,
@@ -75,6 +85,7 @@ class GenerationRequestFactory:
             ),
             model_id=model_id,
             resolution_id=resolution_id,
+            loras=lora_selection,
             seed=self._normalize_seed(seed),
             steps=self._normalize_steps(steps),
             guidance_scale=(

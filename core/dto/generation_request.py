@@ -1,9 +1,9 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from PIL import Image
 
 from core.dto.generation_mode import GenerationMode
-
+from core.loras import LoRASelection
 
 @dataclass(slots=True)
 class GenerationRequest:
@@ -27,6 +27,9 @@ class GenerationRequest:
     scheduler_id: str | None = None
     scheduler_name: str | None = None
 
+    loras: LoRASelection = field(
+        default_factory=LoRASelection.empty,
+    )
 
     mode: GenerationMode = (
         GenerationMode.TEXT_TO_IMAGE
@@ -64,6 +67,8 @@ class GenerationRequest:
             raise ValueError(
                 "Resolution ID cannot be empty."
             )
+
+        self.loras.validate()
 
         if self.steps < 1:
             raise ValueError(

@@ -7,10 +7,13 @@ from core.loras.lora_manager import (
 from core.loras.lora_runtime import (
     LoRARuntime,
 )
-
+from core.loras.lora_selection import (
+    LoRASelection,
+)
 
 __all__ = [
     "LoRADefinition",
     "LoRAManager",
     "LoRARuntime",
+    "LoRASelection",
 ]
