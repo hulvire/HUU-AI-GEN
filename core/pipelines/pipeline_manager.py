@@ -266,6 +266,8 @@ class PipelineManager:
             {},
         )
 
+        variant = settings.get("variant")
+
         pipeline_class = self._get_pipeline_class(
             model=model,
             mode=mode,
@@ -293,12 +295,21 @@ class PipelineManager:
                     "contain a repository ID."
                 )
 
+            load_kwargs: dict[str, Any] = {
+                "torch_dtype": torch.float16,
+                "use_safetensors": True,
+            }
+
+            if variant:
+                load_kwargs["variant"] = variant
+
+            if model.get("family") == "sd15":
+                load_kwargs["safety_checker"] = None
+                load_kwargs["requires_safety_checker"] = False
+
             pipeline = pipeline_class.from_pretrained(
                 repository_id,
-                torch_dtype=torch.float16,
-                use_safetensors=True,
-                safety_checker=None,
-                requires_safety_checker=False,
+                **load_kwargs,
             )
 
         elif model_source.type in {

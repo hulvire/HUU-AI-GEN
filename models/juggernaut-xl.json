@@ -8,5 +8,8 @@
   "model_path": null,
   "repository_id": "RunDiffusion/Juggernaut-XL-v9",
   "checkpoint_asset_id": null,
+  "settings": {
+    "variant": "fp16"
+  },
   "description": "Photorealistic SDXL model."
 }
