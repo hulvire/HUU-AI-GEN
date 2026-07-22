@@ -1,8 +1,25 @@
 /*
- * Application-specific overrides.
+ * Temporary application-level overrides.
  *
- * Experimental styles may be tested here
- * before being promoted into the design
- * system files.
+ * Permanent styles belong in:
+ * - tokens.css
+ * - base.css
+ * - layout.css
+ * - components.css
+ * - utilities.css
  */
 
+#generator-workspace,
+#generator-sidebar,
+#preview,
+.huu-panel,
+.huu-collapsible,
+.huu-collapsible__content {
+    transform: none !important;
+    translate: none !important;
+    scale: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    contain: none !important;
+}

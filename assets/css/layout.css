@@ -37,9 +37,6 @@
     background: var(--huu-surface);
 
     box-shadow: var(--huu-shadow-md);
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 .huu-panel__header {
