@@ -10,6 +10,9 @@ from services.resolution_service import (
     get_default_resolution_id,
     get_resolution_choices,
 )
+from ui.components.collapsible_section import (
+    collapsible_section,
+)
 
 
 def create_sidebar(
@@ -20,6 +23,11 @@ def create_sidebar(
     """
     Create the generator sidebar controls.
     """
+
+    # -------------------------------------------------
+    # Available choices
+    # -------------------------------------------------
+
     model_choices = model_manager.get_choices(
         enabled_only=True,
     )
@@ -34,21 +42,54 @@ def create_sidebar(
         )
     )
 
-    default_model = model_manager.get_default_id()
-    default_preset = preset_manager.get_default_id()
+    resolution_choices = (
+        get_resolution_choices()
+    )
+
+    mode_choices = [
+        (
+            "Text to Image",
+            GenerationMode.TEXT_TO_IMAGE.value,
+        ),
+        (
+            "Image to Image",
+            GenerationMode.IMAGE_TO_IMAGE.value,
+        ),
+    ]
+
+    # -------------------------------------------------
+    # Default values
+    # -------------------------------------------------
+
+    default_model = (
+        model_manager.get_default_id()
+    )
+
+    default_preset = (
+        preset_manager.get_default_id()
+    )
 
     default_scheduler = (
         scheduler_manager.get_default_id()
     )
 
-    resolution_choices = get_resolution_choices()
-    default_resolution = get_default_resolution_id()
+    default_resolution = (
+        get_default_resolution_id()
+    )
+
+    default_mode = (
+        GenerationMode.TEXT_TO_IMAGE.value
+    )
+
+    # -------------------------------------------------
+    # Sidebar interface
+    # -------------------------------------------------
 
     with gr.Column(
         elem_id="generator-sidebar",
-        elem_classes=["app-panel"],
-        scale=1,
-        min_width=340,
+        elem_classes=["huu-panel"],
+        scale=3,
+        min_width=360,
     ):
         gr.HTML(
             """
@@ -64,10 +105,14 @@ def create_sidebar(
             """
         )
 
-        with gr.Accordion(
-            label="Prompt",
-            open=True,
-            elem_classes=["settings-section"],
+        # ---------------------------------------------
+        # Prompt
+        # ---------------------------------------------
+
+        with collapsible_section(
+            section_id="prompt-settings",
+            title="Prompt",
+            open_by_default=True,
         ):
             preset = gr.Dropdown(
                 label="Preset",
@@ -82,17 +127,8 @@ def create_sidebar(
 
             mode = gr.Radio(
                 label="Generation mode",
-                choices=[
-                    (
-                        "Text to Image",
-                        GenerationMode.TEXT_TO_IMAGE.value,
-                    ),
-                    (
-                        "Image to Image",
-                        GenerationMode.IMAGE_TO_IMAGE.value,
-                    ),
-                ],
-                value=GenerationMode.TEXT_TO_IMAGE.value,
+                choices=mode_choices,
+                value=default_mode,
                 interactive=True,
             )
 
@@ -133,10 +169,14 @@ def create_sidebar(
                 lines=3,
             )
 
-        with gr.Accordion(
-            label="Model and output",
-            open=True,
-            elem_classes=["settings-section"],
+        # ---------------------------------------------
+        # Model and output
+        # ---------------------------------------------
+
+        with collapsible_section(
+            section_id="model-settings",
+            title="Model and output",
+            open_by_default=True,
         ):
             model = gr.Dropdown(
                 label="Model",
@@ -152,10 +192,14 @@ def create_sidebar(
                 interactive=True,
             )
 
-        with gr.Accordion(
-            label="Advanced settings",
-            open=False,
-            elem_classes=["settings-section"],
+        # ---------------------------------------------
+        # Advanced settings
+        # ---------------------------------------------
+
+        with collapsible_section(
+            section_id="advanced-settings",
+            title="Advanced settings",
+            open_by_default=False,
         ):
             scheduler = gr.Dropdown(
                 label="Scheduler",
@@ -191,11 +235,14 @@ def create_sidebar(
                 step=0.5,
             )
 
+        # ---------------------------------------------
+        # Primary action
+        # ---------------------------------------------
+
         generate = gr.Button(
             value="Generate image",
             variant="primary",
             elem_id="generate-button",
-            elem_classes=["primary-action"],
         )
 
     return {

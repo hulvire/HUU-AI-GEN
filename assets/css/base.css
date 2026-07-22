@@ -1,0 +1,74 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    background: var(--huu-background);
+    color: var(--huu-text);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+::selection {
+    background:
+        rgba(99, 102, 241, 0.22);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    text-wrap: pretty;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+.huu-eyebrow {
+    display: block;
+    margin: 0 0 var(--huu-space-2);
+
+    color: var(--huu-text-muted);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.huu-title {
+    margin: 0;
+
+    color: var(--huu-text);
+
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.15;
+
+    letter-spacing: -0.035em;
+}
+
+.huu-description {
+    margin: var(--huu-space-3) 0 0;
+
+    color: var(--huu-text-soft);
+
+    font-size: 0.9rem;
+    line-height: 1.65;
+}

@@ -32,7 +32,11 @@ from core.registry import GeneratorRegistry
 from core.requests import GenerationRequestFactory
 from services.generator_service import GeneratorService
 from ui.app import create_app
-from ui.theme import create_theme, load_css
+from ui.theme import (
+    create_theme,
+    load_css,
+    load_js,
+)
 
 
 def bootstrap() -> ApplicationContext:
@@ -135,6 +139,13 @@ def bootstrap() -> ApplicationContext:
         demo=demo,
         theme=create_theme(),
         css=load_css(),
+        js=load_js(),
+        head=(
+            '<script src="'
+            'https://cdn.jsdelivr.net/npm/'
+            'gsap@3.13.0/dist/gsap.min.js'
+            '"></script>'
+        ),
     )
 
 

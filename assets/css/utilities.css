@@ -1,0 +1,47 @@
+.huu-hidden {
+    display: none !important;
+}
+
+.huu-muted {
+    color: var(--huu-text-soft) !important;
+}
+
+.huu-text-center {
+    text-align: center !important;
+}
+
+.huu-full-width {
+    width: 100% !important;
+}
+
+.huu-hover-lift {
+    transition:
+        transform
+        var(--huu-duration-fast)
+        var(--huu-ease),
+        box-shadow
+        var(--huu-duration-fast)
+        var(--huu-ease);
+}
+
+.huu-hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--huu-shadow-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}

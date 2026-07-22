@@ -48,6 +48,8 @@ class ApplicationContext:
     demo: gr.Blocks
     theme: Any
     css: str
+    js: str
+    head: str
 
     def run(self) -> None:
         """
@@ -56,4 +58,6 @@ class ApplicationContext:
         self.demo.launch(
             theme=self.theme,
             css=self.css,
+            js=self.js,
+            head=self.head,
         )

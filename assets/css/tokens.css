@@ -1,0 +1,137 @@
+:root {
+    /* Brand */
+
+    --huu-primary-400: #818cf8;
+    --huu-primary-500: #6366f1;
+    --huu-primary-600: #4f46e5;
+
+    --huu-accent-400: #c084fc;
+    --huu-accent-500: #a855f7;
+
+    /* Surfaces */
+
+    --huu-background: #f5f7fb;
+
+    --huu-surface:
+        rgba(255, 255, 255, 0.74);
+
+    --huu-surface-soft:
+        rgba(255, 255, 255, 0.58);
+
+    --huu-surface-strong:
+        rgba(255, 255, 255, 0.94);
+
+    --huu-surface-muted:
+        rgba(241, 245, 249, 0.86);
+
+    /* Text */
+
+    --huu-text: #0f172a;
+
+    --huu-text-soft:
+        rgba(15, 23, 42, 0.68);
+
+    --huu-text-muted:
+        rgba(15, 23, 42, 0.48);
+
+    /* Borders */
+
+    --huu-border:
+        rgba(15, 23, 42, 0.09);
+
+    --huu-border-strong:
+        rgba(15, 23, 42, 0.14);
+
+    /* Status */
+
+    --huu-success: #16a34a;
+    --huu-warning: #d97706;
+    --huu-danger: #dc2626;
+
+    /* Radius */
+
+    --huu-radius-sm: 10px;
+    --huu-radius-md: 16px;
+    --huu-radius-lg: 24px;
+    --huu-radius-xl: 32px;
+    --huu-radius-pill: 999px;
+
+    /* Spacing */
+
+    --huu-space-1: 4px;
+    --huu-space-2: 8px;
+    --huu-space-3: 12px;
+    --huu-space-4: 16px;
+    --huu-space-5: 20px;
+    --huu-space-6: 24px;
+    --huu-space-8: 32px;
+    --huu-space-10: 40px;
+    --huu-space-12: 48px;
+
+    /* Shadows */
+
+    --huu-shadow-sm:
+        0 8px 24px rgba(15, 23, 42, 0.06);
+
+    --huu-shadow-md:
+        0 18px 50px rgba(15, 23, 42, 0.09);
+
+    --huu-shadow-lg:
+        0 28px 80px rgba(15, 23, 42, 0.12);
+
+    /* Motion */
+
+    --huu-duration-fast: 160ms;
+    --huu-duration-normal: 240ms;
+    --huu-duration-slow: 420ms;
+
+    --huu-ease:
+        cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* Layout */
+
+    --huu-container-width: 1680px;
+    --huu-sidebar-width: 390px;
+}
+
+
+/* Dark mode token overrides */
+
+.dark {
+    --huu-background: #080b12;
+
+    --huu-surface:
+        rgba(18, 24, 36, 0.78);
+
+    --huu-surface-soft:
+        rgba(18, 24, 36, 0.6);
+
+    --huu-surface-strong:
+        rgba(22, 29, 43, 0.94);
+
+    --huu-surface-muted:
+        rgba(30, 41, 59, 0.78);
+
+    --huu-text: #f8fafc;
+
+    --huu-text-soft:
+        rgba(226, 232, 240, 0.72);
+
+    --huu-text-muted:
+        rgba(226, 232, 240, 0.5);
+
+    --huu-border:
+        rgba(255, 255, 255, 0.09);
+
+    --huu-border-strong:
+        rgba(255, 255, 255, 0.15);
+
+    --huu-shadow-sm:
+        0 8px 24px rgba(0, 0, 0, 0.18);
+
+    --huu-shadow-md:
+        0 18px 50px rgba(0, 0, 0, 0.28);
+
+    --huu-shadow-lg:
+        0 28px 80px rgba(0, 0, 0, 0.38);
+}

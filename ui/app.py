@@ -28,7 +28,9 @@ def create_app(
             application=application,
         )
 
-        with gr.Row():
+        with gr.Row(
+            elem_id="generator-workspace",
+        ):
             sidebar = create_sidebar(
                 model_manager=model_manager,
                 preset_manager=preset_manager,
