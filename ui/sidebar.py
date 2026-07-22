@@ -46,125 +46,156 @@ def create_sidebar(
 
     with gr.Column(
         elem_id="generator-sidebar",
+        elem_classes=["app-panel"],
+        scale=1,
+        min_width=340,
     ):
-        gr.Markdown("## Generation settings")
+        gr.HTML(
+            """
+            <div class="panel-heading">
+                <span class="panel-heading__eyebrow">
+                    Generator
+                </span>
 
-        preset = gr.Dropdown(
-            label="Preset",
-            choices=preset_choices,
-            value=default_preset,
-            interactive=True,
-            info=(
-                "Select a predefined generation "
-                "configuration."
-            ),
+                <h2 class="panel-heading__title">
+                    Generation settings
+                </h2>
+            </div>
+            """
         )
 
-        scheduler = gr.Dropdown(
-            label="Scheduler",
-            choices=scheduler_choices,
-            value=default_scheduler,
-            interactive=True,
-            info=(
-                "Select the diffusion sampling "
-                "scheduler."
-            ),
-        )
-
-        mode = gr.Radio(
-            label="Generation mode",
-            choices=[
-                (
-                    "Text to Image",
-                    GenerationMode.TEXT_TO_IMAGE.value,
-                ),
-                (
-                    "Image to Image",
-                    GenerationMode.IMAGE_TO_IMAGE.value,
-                ),
-            ],
-            value=GenerationMode.TEXT_TO_IMAGE.value,
-            interactive=True,
-        )
-
-        input_image = gr.Image(
-            label="Input image",
-            type="pil",
-            visible=False,
-        )
-
-        strength = gr.Slider(
-            label="Image strength",
-            minimum=0.05,
-            maximum=1.0,
-            value=0.75,
-            step=0.05,
-            info=(
-                "Lower values preserve more "
-                "of the original image."
-            ),
-            visible=False,
-        )
-
-        prompt = gr.Textbox(
+        with gr.Accordion(
             label="Prompt",
-            placeholder=(
-                "Describe the image you want "
-                "to generate..."
-            ),
-            lines=6,
-        )
+            open=True,
+            elem_classes=["settings-section"],
+        ):
+            preset = gr.Dropdown(
+                label="Preset",
+                choices=preset_choices,
+                value=default_preset,
+                interactive=True,
+                info=(
+                    "Select a predefined generation "
+                    "configuration."
+                ),
+            )
 
-        negative_prompt = gr.Textbox(
-            label="Negative prompt",
-            placeholder=(
-                "Describe what should "
-                "not appear..."
-            ),
-            lines=3,
-        )
+            mode = gr.Radio(
+                label="Generation mode",
+                choices=[
+                    (
+                        "Text to Image",
+                        GenerationMode.TEXT_TO_IMAGE.value,
+                    ),
+                    (
+                        "Image to Image",
+                        GenerationMode.IMAGE_TO_IMAGE.value,
+                    ),
+                ],
+                value=GenerationMode.TEXT_TO_IMAGE.value,
+                interactive=True,
+            )
 
-        model = gr.Dropdown(
-            label="Model",
-            choices=model_choices,
-            value=default_model,
-            interactive=True,
-        )
+            input_image = gr.Image(
+                label="Input image",
+                type="pil",
+                visible=False,
+            )
 
-        resolution = gr.Dropdown(
-            label="Resolution",
-            choices=resolution_choices,
-            value=default_resolution,
-            interactive=True,
-        )
+            strength = gr.Slider(
+                label="Image strength",
+                minimum=0.05,
+                maximum=1.0,
+                value=0.75,
+                step=0.05,
+                info=(
+                    "Lower values preserve more "
+                    "of the original image."
+                ),
+                visible=False,
+            )
 
-        seed = gr.Number(
-            label="Seed",
-            value=-1,
-            precision=0,
-            info="Use -1 for a random seed.",
-        )
+            prompt = gr.Textbox(
+                label="Prompt",
+                placeholder=(
+                    "Describe the image you want "
+                    "to generate..."
+                ),
+                lines=6,
+            )
 
-        steps = gr.Slider(
-            label="Steps",
-            minimum=1,
-            maximum=100,
-            value=20,
-            step=1,
-        )
+            negative_prompt = gr.Textbox(
+                label="Negative prompt",
+                placeholder=(
+                    "Describe what should "
+                    "not appear..."
+                ),
+                lines=3,
+            )
 
-        guidance_scale = gr.Slider(
-            label="CFG Scale",
-            minimum=0.0,
-            maximum=30.0,
-            value=7.5,
-            step=0.5,
-        )
+        with gr.Accordion(
+            label="Model and output",
+            open=True,
+            elem_classes=["settings-section"],
+        ):
+            model = gr.Dropdown(
+                label="Model",
+                choices=model_choices,
+                value=default_model,
+                interactive=True,
+            )
+
+            resolution = gr.Dropdown(
+                label="Resolution",
+                choices=resolution_choices,
+                value=default_resolution,
+                interactive=True,
+            )
+
+        with gr.Accordion(
+            label="Advanced settings",
+            open=False,
+            elem_classes=["settings-section"],
+        ):
+            scheduler = gr.Dropdown(
+                label="Scheduler",
+                choices=scheduler_choices,
+                value=default_scheduler,
+                interactive=True,
+                info=(
+                    "Select the diffusion sampling "
+                    "scheduler."
+                ),
+            )
+
+            seed = gr.Number(
+                label="Seed",
+                value=-1,
+                precision=0,
+                info="Use -1 for a random seed.",
+            )
+
+            steps = gr.Slider(
+                label="Steps",
+                minimum=1,
+                maximum=100,
+                value=20,
+                step=1,
+            )
+
+            guidance_scale = gr.Slider(
+                label="CFG Scale",
+                minimum=0.0,
+                maximum=30.0,
+                value=7.5,
+                step=0.5,
+            )
 
         generate = gr.Button(
             value="Generate image",
             variant="primary",
             elem_id="generate-button",
+            elem_classes=["primary-action"],
         )
 
     return {
