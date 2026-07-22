@@ -1,7 +1,7 @@
 {
   "id": "detail-enhancer-xl",
   "name": "Detail Enhancer XL",
-  "enabled": true,
+  "enabled": false,
   "default": false,
   "repository_id": null,
   "weight_name": null,

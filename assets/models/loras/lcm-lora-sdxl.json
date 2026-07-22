@@ -1,0 +1,21 @@
+{
+  "id": "lcm-lora-sdxl",
+  "name": "LCM LoRA SDXL",
+  "enabled": true,
+  "default": false,
+  "repository_id": null,
+  "weight_name": "pytorch_lora_weights.safetensors",
+  "file_path": "assets/models/loras/lcm-lora-sdxl",
+  "default_scale": 1.0,
+  "min_scale": 0.0,
+  "max_scale": 1.5,
+  "compatible_backends": [
+    "diffusers"
+  ],
+  "compatible_models": [
+    "dreamshaper-xl",
+    "juggernaut-xl"
+  ],
+  "trigger_words": [],
+  "description": "Local SDXL Latent Consistency LoRA used for runtime integration testing."
+}
