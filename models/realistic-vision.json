@@ -3,7 +3,7 @@
     "name": "Realistic Vision",
     "backend": "diffusers",
     "model_path": "",
-    "enabled": false,
+    "enabled": true,
     "default": false,
     "description": "Photorealistic Stable Diffusion model."
 }

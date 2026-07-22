@@ -3,7 +3,7 @@
     "name": "SDXL Turbo",
     "backend": "diffusers",
     "repository": "stabilityai/sdxl-turbo",
-    "enabled": false,
+    "enabled": true,
     "default": false,
     "settings": {
         "steps": 2,

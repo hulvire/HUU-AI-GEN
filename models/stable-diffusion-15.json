@@ -2,6 +2,7 @@
     "id": "stable-diffusion-15",
     "name": "Stable Diffusion 1.5",
     "backend": "diffusers",
+    "family": "sd15",
     "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
     "enabled": true,
     "default": true,

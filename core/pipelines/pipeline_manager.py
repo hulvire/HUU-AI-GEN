@@ -4,6 +4,8 @@ import torch
 from diffusers import (
     StableDiffusionImg2ImgPipeline,
     StableDiffusionPipeline,
+    StableDiffusionXLImg2ImgPipeline,
+    StableDiffusionXLPipeline,
 )
 
 from core.dto import GenerationMode
@@ -17,8 +19,9 @@ from core.schedulers import (
 StableDiffusionRuntimePipeline = (
     StableDiffusionPipeline
     | StableDiffusionImg2ImgPipeline
+    | StableDiffusionXLPipeline
+    | StableDiffusionXLImg2ImgPipeline
 )
-
 
 class PipelineManager:
     """
@@ -263,8 +266,9 @@ class PipelineManager:
             {},
         )
 
-        pipeline_class = (
-            self._get_pipeline_class(mode)
+        pipeline_class = self._get_pipeline_class(
+            model=model,
+            mode=mode,
         )
 
         print("=" * 60)
@@ -337,24 +341,39 @@ class PipelineManager:
 
     def _get_pipeline_class(
         self,
+        model: dict[str, Any],
         mode: GenerationMode,
-    ) -> type[
-        StableDiffusionPipeline
-        | StableDiffusionImg2ImgPipeline
-    ]:
+    ) -> type[StableDiffusionRuntimePipeline]:
         """
         Resolve the Diffusers pipeline class
-        for a generation mode.
+        for a model family and generation mode.
         """
-        if mode == GenerationMode.TEXT_TO_IMAGE:
-            return StableDiffusionPipeline
+        family = model.get("family")
 
-        if mode == GenerationMode.IMAGE_TO_IMAGE:
-            return StableDiffusionImg2ImgPipeline
+        if family == "sd15":
+            if mode == GenerationMode.TEXT_TO_IMAGE:
+                return StableDiffusionPipeline
+
+            if mode == GenerationMode.IMAGE_TO_IMAGE:
+                return StableDiffusionImg2ImgPipeline
+
+        elif family == "sdxl":
+            if mode == GenerationMode.TEXT_TO_IMAGE:
+                return StableDiffusionXLPipeline
+
+            if mode == GenerationMode.IMAGE_TO_IMAGE:
+                return StableDiffusionXLImg2ImgPipeline
+
+        else:
+            raise ValueError(
+                "Unsupported or missing model family "
+                f"for model '{self._get_model_id(model)}': "
+                f"{family!r}"
+            )
 
         raise ValueError(
-            "Unsupported generation mode: "
-            f"{mode}"
+            "Unsupported generation mode "
+            f"'{mode.value}' for model family '{family}'."
         )
 
     def _get_cache_key(

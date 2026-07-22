@@ -1,9 +1,12 @@
 {
-    "id": "dreamshaper-xl",
-    "name": "DreamShaper XL",
-    "backend": "diffusers",
-    "model_path": "",
-    "enabled": false,
-    "default": false,
-    "description": "General-purpose creative SDXL model."
+  "id": "dreamshaper-xl",
+  "name": "DreamShaper XL",
+  "backend": "diffusers",
+  "family": "sdxl",
+  "enabled": true,
+  "default": false,
+  "model_path": null,
+  "repository_id": "Lykon/dreamshaper-xl-1-0",
+  "checkpoint_asset_id": null,
+  "description": "General-purpose creative SDXL model."
 }

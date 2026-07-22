@@ -3,7 +3,7 @@
     "name": "Juggernaut XL",
     "backend": "diffusers",
     "model_path": "",
-    "enabled": false,
+    "enabled": true,
     "default": false,
     "description": "Photorealistic SDXL model."
 }
