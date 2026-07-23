@@ -5,7 +5,7 @@
   "backend": "pillow",
   "enabled": true,
   "default": false,
-  "settings": {
+  "runtime": {
     "steps": 1,
     "guidance_scale": 0.0
   }
