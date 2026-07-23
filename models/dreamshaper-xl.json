@@ -8,5 +8,9 @@
   "model_path": null,
   "repository_id": "Lykon/dreamshaper-xl-1-0",
   "checkpoint_asset_id": null,
+  "generation_defaults": {
+    "steps": 30,
+    "guidance_scale": 7.0
+  },
   "description": "General-purpose creative SDXL model."
 }

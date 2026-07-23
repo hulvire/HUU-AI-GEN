@@ -261,10 +261,7 @@ class PipelineManager:
         repository_id = model_source.repository_id
         model_path = model_source.local_path
 
-        runtime = model.get(
-            "runtime",
-            {},
-        )
+        runtime = model.runtime
 
         variant = runtime.get("variant")
 
@@ -285,7 +282,7 @@ class PipelineManager:
         print("SOURCE TYPE:", model_source.type)
         print("REPOSITORY:", repository_id)
         print("MODEL PATH:", model_path)
-        print("SETTINGS:", runtime)
+        print("RUNTIME:", runtime)
         print("=" * 60)
 
         if model_source.type == "repository":

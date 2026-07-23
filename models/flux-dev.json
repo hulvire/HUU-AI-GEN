@@ -8,5 +8,9 @@
   "model_path": null,
   "repository_id": "black-forest-labs/FLUX.1-dev",
   "checkpoint_asset_id": null,
+  "generation_defaults": {
+    "steps": 28,
+    "guidance_scale": 3.5
+  },
   "description": "High-quality FLUX development model. Currently unsupported by the runtime."
 }

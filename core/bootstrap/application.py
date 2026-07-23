@@ -122,6 +122,7 @@ def bootstrap() -> ApplicationContext:
         preset_manager=preset_manager,
         scheduler_manager=scheduler_manager,
         lora_manager=lora_manager,
+        model_manager=model_manager,
     )
 
     generator_service = GeneratorService(

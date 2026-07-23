@@ -44,6 +44,7 @@ def create_app(
             preview=preview,
             generator_service=generator_service,
             preset_manager=preset_manager,
+            model_manager=model_manager,
         )
 
     return demo

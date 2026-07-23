@@ -145,6 +145,39 @@ class ModelDefinition:
             default,
         )
 
+    @property
+    def runtime(self) -> dict[str, Any]:
+        """
+        Return validated runtime configuration.
+        """
+        runtime = self.get(
+            "runtime",
+            {},
+        )
+
+        if not isinstance(runtime, dict):
+            return {}
+
+        return runtime
+
+
+    @property
+    def generation_defaults(self) -> dict[str, Any]:
+        """
+        Return validated generation defaults.
+        """
+        defaults = self.get(
+            "generation_defaults",
+            {},
+        )
+
+        if not isinstance(defaults, dict):
+            return {}
+
+        return defaults
+
+
+
     def to_dict(self) -> dict[str, Any]:
         """
         Convert the definition into a serializable dictionary.

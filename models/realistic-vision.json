@@ -8,5 +8,11 @@
   "model_path": null,
   "repository_id": null,
   "checkpoint_asset_id": null,
+
+  "generation_defaults": {
+    "steps": 20,
+    "guidance_scale": 7.5
+  },
+
   "description": "Photorealistic Stable Diffusion 1.5 model."
 }

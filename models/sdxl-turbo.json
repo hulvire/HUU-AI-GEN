@@ -8,7 +8,8 @@
   "model_path": null,
   "repository_id": "stabilityai/sdxl-turbo",
   "checkpoint_asset_id": null,
-  "runtime": {
+  "runtime": {},
+  "generation_defaults": {
     "steps": 2,
     "guidance_scale": 0.0
   },

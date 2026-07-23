@@ -7,6 +7,7 @@ from core.dto import (
 from core.presets import PresetManager
 from core.schedulers import SchedulerManager
 from core.loras import LoRAManager
+from core.models import ModelManager
 
 class GenerationRequestFactory:
     """
@@ -18,10 +19,12 @@ class GenerationRequestFactory:
         preset_manager: PresetManager,
         scheduler_manager: SchedulerManager,
         lora_manager: LoRAManager,
+        model_manager: ModelManager,
     ) -> None:
         self._preset_manager = preset_manager
         self._scheduler_manager = scheduler_manager
         self._lora_manager = lora_manager
+        self._model_manager = model_manager
 
     def create(
         self,
@@ -35,8 +38,8 @@ class GenerationRequestFactory:
         model_id: str,
         resolution_id: str,
         seed: int | float | None,
-        steps: int | float,
-        guidance_scale: int | float,
+        steps: int | float | None,
+        guidance_scale: int | float | None,
         lora_selections: dict[str, float] | None = None,
     ) -> GenerationRequest:
         """
@@ -45,6 +48,14 @@ class GenerationRequestFactory:
         """
         preset = self._preset_manager.require(
             preset_id
+        )
+
+        model = self._model_manager.require(
+            model_id
+        )
+
+        generation_defaults = (
+            model.generation_defaults
         )
 
         generation_mode = GenerationMode(mode)
@@ -70,6 +81,24 @@ class GenerationRequestFactory:
             )
         )
 
+        resolved_steps = (
+            steps
+            if steps is not None
+            else generation_defaults.get(
+                "steps",
+                20,
+            )
+        )
+
+        resolved_guidance_scale = (
+            guidance_scale
+            if guidance_scale is not None
+            else generation_defaults.get(
+                "guidance_scale",
+                7.0,
+            )
+        )
+
         request = GenerationRequest(
             preset_id=preset.id,
             preset_name=preset.name,
@@ -87,10 +116,12 @@ class GenerationRequestFactory:
             resolution_id=resolution_id,
             loras=lora_selection,
             seed=self._normalize_seed(seed),
-            steps=self._normalize_steps(steps),
+            steps=self._normalize_steps(
+                resolved_steps
+            ),
             guidance_scale=(
                 self._normalize_guidance_scale(
-                    guidance_scale
+                    resolved_guidance_scale
                 )
             ),
             mode=generation_mode,

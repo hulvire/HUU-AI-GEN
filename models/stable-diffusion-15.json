@@ -1,10 +1,16 @@
 {
-    "id": "stable-diffusion-15",
-    "name": "Stable Diffusion 1.5",
-    "backend": "diffusers",
-    "family": "sd15",
-    "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
-    "enabled": true,
-    "default": true,
-    "description": "Stable Diffusion 1.5 for local image generation."
+  "id": "stable-diffusion-15",
+  "name": "Stable Diffusion 1.5",
+  "backend": "diffusers",
+  "family": "sd15",
+  "repository_id": "stable-diffusion-v1-5/stable-diffusion-v1-5",
+  "enabled": true,
+  "default": true,
+
+  "generation_defaults": {
+    "steps": 20,
+    "guidance_scale": 7.5
+  },
+
+  "description": "Stable Diffusion 1.5 for local image generation."
 }

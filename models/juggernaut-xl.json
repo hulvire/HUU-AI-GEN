@@ -8,8 +8,15 @@
   "model_path": null,
   "repository_id": "RunDiffusion/Juggernaut-XL-v9",
   "checkpoint_asset_id": null,
+
   "runtime": {
     "variant": "fp16"
   },
+
+  "generation_defaults": {
+    "steps": 30,
+    "guidance_scale": 7.0
+  },
+
   "description": "Photorealistic SDXL model."
 }
