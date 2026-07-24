@@ -123,6 +123,10 @@ def create_sidebar(
                     "Select a predefined generation "
                     "configuration."
                 ),
+                elem_classes=[
+                    "sidebar-control",
+                    "preset-choices",
+                ],
             )
 
             mode = gr.Radio(
@@ -162,6 +166,8 @@ def create_sidebar(
                     "to generate..."
                 ),
                 lines=6,
+                elem_classes=["prompt-imput"],
+
             )
 
             negative_prompt = gr.Textbox(
@@ -171,6 +177,7 @@ def create_sidebar(
                     "not appear..."
                 ),
                 lines=3,
+                elem_classes=["negative_prompt-imput"],
             )
 
         # ---------------------------------------------
