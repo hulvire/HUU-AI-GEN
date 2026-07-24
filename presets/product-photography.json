@@ -1,0 +1,14 @@
+{
+    "id": "product-photography",
+    "name": "Product Photography",
+    "description": "Clean commercial product photography with controlled studio lighting.",
+    "enabled": true,
+    "default": false,
+    "prompt_prefix": "professional product photography, commercial advertising image, clean composition, controlled studio lighting, realistic materials",
+    "prompt_suffix": "sharp focus, highly detailed, accurate reflections, premium presentation, high-end advertising",
+    "negative_prompt": "low quality, blurry, distorted product, incorrect geometry, duplicate objects, cluttered background, harsh shadows, overexposed, underexposed, text, watermark, logo",
+    "scheduler": "dpmpp-2m",
+    "steps": 28,
+    "guidance_scale": 7.0,
+    "strength": 0.35
+}

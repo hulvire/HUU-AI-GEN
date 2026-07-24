@@ -131,6 +131,21 @@ class GenerationRequestFactory:
             ),
         )
 
+
+        print("=" * 70)
+        print("GENERATION REQUEST")
+        print("Model:", model.id)
+        print("Repository:", model.repository_id)
+        print("Preset:", preset.id)
+        print("Scheduler:", scheduler.id)
+        print("Steps:", request.steps)
+        print("Guidance scale:", request.guidance_scale)
+        print("Mode:", request.mode.value)
+        print("Prompt:", request.prompt)
+        print("Negative prompt:", request.negative_prompt)
+        print("LoRAs:", request.loras)
+        print("=" * 70)
+
         request.validate()
 
         return request

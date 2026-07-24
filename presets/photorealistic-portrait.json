@@ -1,0 +1,14 @@
+{
+    "id": "photorealistic-portrait",
+    "name": "Photorealistic Portrait",
+    "description": "Realistic human portrait with natural skin texture and studio-quality lighting.",
+    "enabled": true,
+    "default": false,
+    "prompt_prefix": "photorealistic portrait photography, realistic human proportions, natural skin texture, detailed eyes, symmetrical face, professional studio lighting",
+    "prompt_suffix": "sharp focus, realistic colors, high detail, shallow depth of field",
+    "negative_prompt": "low quality, blurry, cartoon, anime, illustration, plastic skin, waxy skin, deformed face, asymmetrical eyes, crossed eyes, bad anatomy, malformed hands, extra fingers, missing fingers, fused fingers, duplicated limbs, watermark, text",
+    "scheduler": "dpmpp-2m",
+    "steps": 30,
+    "guidance_scale": 6.5,
+    "strength": 0.35
+}

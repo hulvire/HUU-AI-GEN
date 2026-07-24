@@ -1,0 +1,14 @@
+{
+    "id": "anime-character",
+    "name": "Anime Character",
+    "description": "Detailed anime-style character illustration with clean linework and expressive features.",
+    "enabled": true,
+    "default": false,
+    "prompt_prefix": "high quality anime character illustration, expressive face, detailed eyes, clean linework, balanced composition",
+    "prompt_suffix": "vibrant colors, highly detailed, sharp focus, polished digital artwork",
+    "negative_prompt": "low quality, blurry, photorealistic, malformed hands, extra fingers, missing fingers, fused fingers, deformed face, asymmetrical eyes, duplicated limbs, bad anatomy, watermark, text",
+    "scheduler": "euler",
+    "steps": 26,
+    "guidance_scale": 7.0,
+    "strength": 0.4
+}

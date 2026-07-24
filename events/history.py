@@ -19,6 +19,23 @@ def register_history_events(
     """
     Register history UI events.
     """
+
+    def on_history_select(
+        item_paths: list[str] | None,
+        event: gr.SelectData,
+    ) -> tuple[str, str | None]:
+        """
+        Handle gallery selection.
+
+        Gradio injects SelectData automatically because the event argument
+        is explicitly type-annotated on this callback.
+        """
+        return select_history_item(
+            item_paths=item_paths,
+            event=event,
+            history_manager=history_manager,
+        )
+
     history["refresh"].click(
         fn=lambda: refresh_history(
             history_manager=history_manager,
@@ -33,7 +50,7 @@ def register_history_events(
     )
 
     history["gallery"].select(
-        fn=select_history_item,
+        fn=on_history_select,
         inputs=[
             history["item_paths"],
         ],

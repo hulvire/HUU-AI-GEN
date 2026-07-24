@@ -1,0 +1,14 @@
+{
+    "id": "cinematic-photo",
+    "name": "Cinematic Photo",
+    "description": "Atmospheric cinematic photography with dramatic composition and lighting.",
+    "enabled": true,
+    "default": false,
+    "prompt_prefix": "cinematic photography, dramatic composition, atmospheric scene, realistic lighting, cinematic color grading",
+    "prompt_suffix": "highly detailed, sharp focus, volumetric lighting, realistic textures, film still",
+    "negative_prompt": "low quality, blurry, flat lighting, oversaturated, cartoon, anime, illustration, deformed anatomy, malformed hands, extra fingers, duplicated objects, watermark, text, logo",
+    "scheduler": "dpmpp-2m",
+    "steps": 28,
+    "guidance_scale": 6.0,
+    "strength": 0.4
+}
