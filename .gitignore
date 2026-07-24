@@ -180,3 +180,22 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 outputs/
+# Generated images
+outputs/
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Hugging Face cache
+.cache/
+
+# VS Code
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
