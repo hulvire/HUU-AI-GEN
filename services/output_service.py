@@ -118,6 +118,21 @@ def create_metadata(
                 "id": request.scheduler_id,
                 "name": request.scheduler_name,
             },
+            "loras": [
+                {
+                    "id": runtime.id,
+                    "name": runtime.name,
+                    "scale": runtime.scale,
+                    "adapter_name": runtime.adapter_name,
+                    "repository_id": runtime.repository_id,
+                    "weight_name": runtime.weight_name,
+                    "file_path": runtime.file_path,
+                    "trigger_words": list(
+                        runtime.trigger_words
+                    ),
+                }
+                for runtime in request.loras.active()
+            ],
             "width": result.width,
             "height": result.height,
             "steps": result.steps,

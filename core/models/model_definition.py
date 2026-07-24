@@ -16,6 +16,7 @@ class ModelDefinition:
     id: str
     name: str
     backend: str
+    family: str
 
     enabled: bool = True
     default: bool = False
@@ -40,22 +41,16 @@ class ModelDefinition:
         """
         Create a model definition from decoded JSON data.
         """
-        model_id = str(
-            data.get("id", "")
-        ).strip()
-
-        name = str(
-            data.get("name", model_id)
-        ).strip()
-
-        backend = str(
-            data.get("backend", "")
-        ).strip()
+        model_id = str(data.get("id", "")).strip()
+        name = str(data.get("name", model_id)).strip()
+        backend = str(data.get("backend", "")).strip()
+        family = str(data.get("family", "")).strip()
 
         known_fields = {
             "id",
             "name",
             "backend",
+            "family",
             "enabled",
             "default",
             "model_path",
@@ -74,12 +69,9 @@ class ModelDefinition:
             id=model_id,
             name=name,
             backend=backend,
-            enabled=bool(
-                data.get("enabled", True)
-            ),
-            default=bool(
-                data.get("default", False)
-            ),
+            family=family,
+            enabled=bool(data.get("enabled", True)),
+            default=bool(data.get("default", False)),
             model_path=cls._optional_string(
                 data.get("model_path")
             ),
@@ -115,6 +107,14 @@ class ModelDefinition:
                 "Model backend cannot be empty."
             )
 
+        if (
+            self.backend == "diffusers"
+            and not self.family
+        ):
+            raise ValueError(
+                "Diffusers model family cannot be empty."
+            )
+
         configured_sources = [
             source
             for source in (
@@ -144,18 +144,6 @@ class ModelDefinition:
             key,
             default,
         )
-
-    @property
-    def family(self) -> str:
-        """
-        Return the model family.
-        """
-        family = self.get(
-            "family",
-            "",
-        )
-
-        return str(family).strip()
 
     @property
     def runtime(self) -> dict[str, Any]:
@@ -197,6 +185,7 @@ class ModelDefinition:
             "id": self.id,
             "name": self.name,
             "backend": self.backend,
+            "family": self.family,
             "enabled": self.enabled,
             "default": self.default,
             "checkpoint_asset_id": (

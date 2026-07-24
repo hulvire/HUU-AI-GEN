@@ -130,6 +130,10 @@ def create_sidebar(
                 choices=mode_choices,
                 value=default_mode,
                 interactive=True,
+                elem_classes=[
+                    "sidebar-control",
+                    "generation-mode",
+                ],
             )
 
             input_image = gr.Image(

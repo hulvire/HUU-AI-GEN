@@ -8,9 +8,8 @@
 - [x] Generator Registry
 - [x] Generation Engine
 - [x] ModelManager
-- [x] ModelAssetResolver
 - [x] AssetManager
-- [x] Stable Diffusion 1.5 backend
+- [x] ModelAssetResolver
 - [x] JSON model configuration
 - [x] Automatic metadata generation
 - [x] Generator caching
@@ -20,44 +19,56 @@
 ## ✅ v0.5.0 — Model Runtime
 
 - [x] PipelineManager
-- [x] PipelineCache
+- [x] Pipeline cache
 - [x] CheckpointManager
 - [x] ResolvedModelSource
 - [x] Runtime model source validation
 - [x] Asset-based model loading
-- [x] Local `.safetensors` checkpoint loading
 - [x] Repository model loading
-- [x] Dependency Injection for runtime managers
-- [x] Source-aware pipeline loading
-- [x] Model switching without application restart
+- [x] Local `.safetensors` checkpoint loading
+- [x] Pipeline switching without application restart
+- [x] SchedulerManager
+- [x] SchedulerFactory
+- [x] Scheduler selection
+- [x] Scheduler metadata
+- [x] Scheduler presets
 
 ---
 
-## 🚧 v0.6.0 — Image Generation
+## 🚧 v0.6.0 — Generation Features
 
-- [ ] Preset Manager
-- [ ] Prompt templates
-- [ ] Negative prompt presets
+- [x] PresetManager
+- [x] Preset JSON configuration
+- [x] Prompt builder
+- [x] Image-to-Image
+- [x] Input image support
+- [x] Input image archiving
+- [x] Input image metadata
+- [x] Generation mode selection
+- [x] LoRAManager
+- [x] Local LoRA loading
+- [x] LoRA runtime loader
+- [x] LoRA selection
+- [x] LoRA metadata
 - [ ] Image history browser
-- [ ] Batch generation
-- [ ] Image-to-Image
-- [ ] Inpainting
-- [ ] Upscaling
 - [ ] Metadata viewer
+- [ ] Batch generation
+- [ ] Negative prompt library
 
 ---
 
-## 🔜 v0.7.0 — Advanced Models
+## 🔜 v0.7.0 — Advanced Generation
 
-- [ ] Stable Diffusion XL
-- [ ] SDXL Turbo
+- [x] Stable Diffusion XL
+- [x] SDXL Turbo
 - [ ] FLUX
 - [ ] ControlNet
-- [ ] LoRA Manager
+- [ ] Multiple LoRA support
+- [ ] LoRA stack editor
 - [ ] VAE Manager
 - [ ] Textual Inversion
-- [ ] Multiple scheduler selection
 - [ ] Refiner support
+- [ ] Regional prompting
 
 ---
 
@@ -70,17 +81,19 @@
 - [ ] Memory monitor
 - [ ] Performance profiles
 - [ ] Generation queue
+- [ ] Generation cancellation
 
 ---
 
 ## 🌐 v1.0.0 — Production Release
 
+- [ ] Downloadable Model Manager
+- [ ] Integrated Hugging Face browser
+- [ ] Settings Manager
 - [ ] Plugin system
 - [ ] Extension API
-- [ ] Downloadable Model Manager
-- [ ] Settings Manager
 - [ ] Automatic update checker
 - [ ] Complete documentation
-- [ ] Cross-platform packaging
 - [ ] Windows installer
 - [ ] Linux package
+- [ ] Portable release
