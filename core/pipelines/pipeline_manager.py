@@ -9,7 +9,10 @@ from diffusers import (
 )
 
 from core.dto import GenerationMode
-from core.models import ResolvedModelSource
+from core.models import (
+    ModelDefinition,
+    ResolvedModelSource,
+)
 from core.pipelines.pipeline_cache import PipelineCache
 from core.schedulers import (
     SchedulerFactory,
@@ -22,6 +25,7 @@ StableDiffusionRuntimePipeline = (
     | StableDiffusionXLPipeline
     | StableDiffusionXLImg2ImgPipeline
 )
+
 
 class PipelineManager:
     """
@@ -41,7 +45,7 @@ class PipelineManager:
 
     def get_pipeline(
         self,
-        model: dict[str, Any],
+        model: ModelDefinition,
         model_source: ResolvedModelSource,
         mode: GenerationMode,
     ) -> StableDiffusionRuntimePipeline:
@@ -244,7 +248,7 @@ class PipelineManager:
 
     def _load_pipeline(
         self,
-        model: dict[str, Any],
+        model: ModelDefinition,
         model_source: ResolvedModelSource,
         mode: GenerationMode,
     ) -> StableDiffusionRuntimePipeline:
@@ -253,10 +257,7 @@ class PipelineManager:
         """
         model_id = self._get_model_id(model)
 
-        model_name = model.get(
-            "name",
-            model_id,
-        )
+        model_name = model.name or model_id
 
         repository_id = model_source.repository_id
         model_path = model_source.local_path
@@ -300,7 +301,7 @@ class PipelineManager:
             if variant:
                 load_kwargs["variant"] = variant
 
-            if model.get("family") == "sd15":
+            if model.family == "sd15":
                 load_kwargs["safety_checker"] = None
                 load_kwargs["requires_safety_checker"] = False
 
@@ -349,14 +350,14 @@ class PipelineManager:
 
     def _get_pipeline_class(
         self,
-        model: dict[str, Any],
+        model: ModelDefinition,
         mode: GenerationMode,
     ) -> type[StableDiffusionRuntimePipeline]:
         """
         Resolve the Diffusers pipeline class
         for a model family and generation mode.
         """
-        family = model.get("family")
+        family = model.family
 
         if family == "sd15":
             if mode == GenerationMode.TEXT_TO_IMAGE:
@@ -464,22 +465,19 @@ class PipelineManager:
 
         pipeline.enable_model_cpu_offload()
 
+    @staticmethod
     def _get_model_id(
-        self,
-        model: dict[str, Any],
+        model: ModelDefinition,
     ) -> str:
         """
-        Return and validate the model identifier.
+        Return the model identifier.
         """
-        model_id = model.get("id")
-
-        if not model_id:
+        if not model.id:
             raise ValueError(
-                "Model configuration does not "
-                "contain an ID."
+                "Model configuration does not contain an ID."
             )
 
-        return str(model_id)
+        return model.id
 
     def _clear_cuda_cache(self) -> None:
         """

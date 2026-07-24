@@ -14,7 +14,7 @@ from generators.base import BaseGenerator
 
 GeneratorFactory = Callable[
     [
-        dict[str, Any],
+        ModelDefinition,
         ResolvedModelSource | None,
     ],
     BaseGenerator,
@@ -107,7 +107,7 @@ class GeneratorRegistry:
             )
 
         return factory(
-            model.to_dict(),
+            model,
             model_source,
         )
 

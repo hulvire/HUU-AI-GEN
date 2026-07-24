@@ -10,7 +10,10 @@ from core.dto import (
     GenerationRequest,
     GenerationResult,
 )
-from core.models import ResolvedModelSource
+from core.models import (
+    ModelDefinition,
+    ResolvedModelSource,
+)
 from core.pipelines import PipelineManager
 from generators.base import BaseGenerator
 from services.lora_loader import LoRALoader
@@ -26,7 +29,7 @@ class DiffusersGenerator(BaseGenerator):
 
     def __init__(
         self,
-        model: dict[str, Any],
+        model: ModelDefinition,
         model_source: ResolvedModelSource | None,
         pipeline_manager: PipelineManager,
         lora_loader: LoRALoader,
@@ -163,14 +166,8 @@ class DiffusersGenerator(BaseGenerator):
             image=pipeline_result.images[0],
             seed=used_seed,
             duration_seconds=duration_seconds,
-            model_id=self.model.get(
-                "id",
-                "unknown-model",
-            ),
-            model_name=self.model.get(
-                "name",
-                "Unknown model",
-            ),
+            model_id=self.model.id,
+            model_name=self.model.name,
             width=request.width,
             height=request.height,
             steps=request.steps,

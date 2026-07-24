@@ -146,6 +146,18 @@ class ModelDefinition:
         )
 
     @property
+    def family(self) -> str:
+        """
+        Return the model family.
+        """
+        family = self.get(
+            "family",
+            "",
+        )
+
+        return str(family).strip()
+
+    @property
     def runtime(self) -> dict[str, Any]:
         """
         Return validated runtime configuration.
@@ -160,9 +172,10 @@ class ModelDefinition:
 
         return runtime
 
-
     @property
-    def generation_defaults(self) -> dict[str, Any]:
+    def generation_defaults(
+        self,
+    ) -> dict[str, Any]:
         """
         Return validated generation defaults.
         """
@@ -175,8 +188,6 @@ class ModelDefinition:
             return {}
 
         return defaults
-
-
 
     def to_dict(self) -> dict[str, Any]:
         """

@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from core.dto import GenerationRequest, GenerationResult
 from generators.base import BaseGenerator
+from core.models import ModelDefinition
 
 
 class PillowGenerator(BaseGenerator):
@@ -21,7 +22,7 @@ class PillowGenerator(BaseGenerator):
 
     def __init__(
         self,
-        model: dict[str, Any],
+        model: ModelDefinition,
     ) -> None:
         self.model = model
 
@@ -59,8 +60,8 @@ class PillowGenerator(BaseGenerator):
             image=image,
             seed=used_seed,
             duration_seconds=duration_seconds,
-            model_id=self.model["id"],
-            model_name=self.model["name"],
+            model_id=self.model.id,
+            model_name=self.model.name,
             width=request.width,
             height=request.height,
             steps=request.steps,
