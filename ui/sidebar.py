@@ -120,12 +120,11 @@ def create_sidebar(
                 value=default_preset,
                 interactive=True,
                 info=(
-                    "Select a predefined generation "
-                    "configuration."
+                    "Select a predefined generation configuration."
                 ),
                 elem_classes=[
                     "sidebar-control",
-                    "preset-choices",
+                    "sidebar-preset-control",
                 ],
             )
 
@@ -136,7 +135,7 @@ def create_sidebar(
                 interactive=True,
                 elem_classes=[
                     "sidebar-control",
-                    "generation-mode",
+                    "sidebar-generation-mode",
                 ],
             )
 
@@ -144,6 +143,10 @@ def create_sidebar(
                 label="Input image",
                 type="pil",
                 visible=False,
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-input-image",
+                ],
             )
 
             strength = gr.Slider(
@@ -157,6 +160,10 @@ def create_sidebar(
                     "of the original image."
                 ),
                 visible=False,
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-image-strenght-scale",
+                ],
             )
 
             prompt = gr.Textbox(
@@ -166,7 +173,7 @@ def create_sidebar(
                     "to generate..."
                 ),
                 lines=6,
-                elem_classes=["prompt-imput"],
+                elem_classes=["sidebar-control","sidebar-prompt-imput"],
 
             )
 
@@ -177,7 +184,7 @@ def create_sidebar(
                     "not appear..."
                 ),
                 lines=3,
-                elem_classes=["negative_prompt-imput"],
+                elem_classes=["sidebar-control","sidebar-negative_prompt-imput"],
             )
 
         # ---------------------------------------------
@@ -194,6 +201,10 @@ def create_sidebar(
                 choices=model_choices,
                 value=default_model,
                 interactive=True,
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-model-control",
+                ],
             )
 
             resolution = gr.Dropdown(
@@ -201,6 +212,10 @@ def create_sidebar(
                 choices=resolution_choices,
                 value=default_resolution,
                 interactive=True,
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-resolution",
+                ],
             )
 
         # ---------------------------------------------
@@ -221,6 +236,10 @@ def create_sidebar(
                     "Select the diffusion sampling "
                     "scheduler."
                 ),
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-model-control",
+                ],
             )
 
             seed = gr.Number(
@@ -228,6 +247,10 @@ def create_sidebar(
                 value=-1,
                 precision=0,
                 info="Use -1 for a random seed.",
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-seed-control",
+                ],
             )
 
             steps = gr.Slider(
@@ -236,6 +259,10 @@ def create_sidebar(
                 maximum=100,
                 value=20,
                 step=1,
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-steps-scale",
+                ],
             )
 
             guidance_scale = gr.Slider(
@@ -244,6 +271,10 @@ def create_sidebar(
                 maximum=30.0,
                 value=7.5,
                 step=0.5,
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-cfg-scale",
+                ],
             )
 
             lora = gr.Dropdown(
@@ -253,6 +284,10 @@ def create_sidebar(
                     ("LCM LoRA SDXL", "lcm-lora-sdxl"),
                 ],
                 value="",
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-lora-control",
+                ],
             )
 
             lora_scale = gr.Slider(
@@ -261,6 +296,10 @@ def create_sidebar(
                 maximum=1.5,
                 value=1.0,
                 step=0.05,
+                elem_classes=[
+                    "sidebar-control",
+                    "sidebar-lora-scale",
+                ],
             )
 
         # ---------------------------------------------

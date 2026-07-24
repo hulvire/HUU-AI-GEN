@@ -27,12 +27,18 @@ def create_preview() -> dict:
         image = gr.Image(
             label="Generated image",
             height=700,
+            elem_classes=[
+                    "preview-image",
+                ],
         )
 
         status = gr.Textbox(
             label="Generation status",
             lines=6,
             interactive=False,
+            elem_classes=[
+                    "preview-image-status",
+                ],
         )
 
     return {

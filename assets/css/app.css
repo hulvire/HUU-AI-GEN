@@ -30,7 +30,15 @@
     font-weight: 500;
 }
 
-.sidebar-control > span {
+.sidebar-control > span,
+.sidebar-control > div > span,
+.sidebar-control > label > span {
     padding: 5px 25px;
     margin-left: -11px;
+}
+.preview-image  label > span {
+    padding: 5px 25px;
+}
+.preview-image-status  label > span {
+    padding: 5px 25px;
 }
