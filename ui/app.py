@@ -9,6 +9,8 @@ from services.generator_service import GeneratorService
 from ui.header import create_header
 from ui.preview import create_preview
 from ui.sidebar import create_sidebar
+from core.history import HistoryManager
+from ui.history import create_history
 
 
 def create_app(
@@ -17,6 +19,7 @@ def create_app(
     model_manager: ModelManager,
     preset_manager: PresetManager,
     scheduler_manager: SchedulerManager,
+    history_manager: HistoryManager,
 ) -> gr.Blocks:
     """
     Build the HUU-AI-GEN Gradio interface.
@@ -37,14 +40,24 @@ def create_app(
                 scheduler_manager=scheduler_manager,
             )
 
-            preview = create_preview()
+            with gr.Column(
+                scale=7,
+                elem_id="output-workspace",
+            ):
+                preview = create_preview()
+
+                history = create_history(
+                    history_manager=history_manager,
+                )
 
         register_events(
             sidebar=sidebar,
             preview=preview,
+            history=history,
             generator_service=generator_service,
             preset_manager=preset_manager,
             model_manager=model_manager,
+            history_manager=history_manager,
         )
 
     return demo

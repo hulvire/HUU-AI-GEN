@@ -44,6 +44,11 @@ from ui.theme import (
     load_css,
     load_js,
 )
+from core.bootstrap.history import (
+    create_history_manager,
+)
+
+
 
 
 def bootstrap() -> ApplicationContext:
@@ -83,6 +88,8 @@ def bootstrap() -> ApplicationContext:
     model_manager.scan()
 
     lora_manager = create_lora_manager()
+
+    history_manager = create_history_manager()
 
     asset_manager = create_asset_manager()
 
@@ -136,6 +143,7 @@ def bootstrap() -> ApplicationContext:
         model_manager=model_manager,
         preset_manager=preset_manager,
         scheduler_manager=scheduler_manager,
+        history_manager=history_manager,
     )
 
     return ApplicationContext(
@@ -145,6 +153,7 @@ def bootstrap() -> ApplicationContext:
         preset_manager=preset_manager,
         scheduler_manager=scheduler_manager,
         lora_manager=lora_manager,
+        history_manager=history_manager,
         scheduler_factory=scheduler_factory,
         asset_manager=asset_manager,
         checkpoint_manager=checkpoint_manager,

@@ -6,7 +6,6 @@ def create_preview() -> dict:
     Create the generated image preview panel.
     """
     with gr.Column(
-        scale=7,
         elem_id="preview",
         elem_classes=["huu-panel"],
     ):

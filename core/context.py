@@ -22,6 +22,9 @@ from core.schedulers import (
     SchedulerManager,
 )
 from services.generator_service import GeneratorService
+from core.history import HistoryManager
+
+
 
 
 @dataclass(slots=True)
@@ -37,6 +40,7 @@ class ApplicationContext:
     preset_manager: PresetManager
     scheduler_manager: SchedulerManager
     lora_manager: LoRAManager
+    history_manager: HistoryManager
 
     scheduler_factory: SchedulerFactory
     asset_manager: AssetManager
